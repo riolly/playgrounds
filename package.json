@@ -20,7 +20,10 @@
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm lint:ws",
     "typecheck": "turbo run typecheck",
-    "ui-add": "turbo run ui-add"
+    "ui-add": "turbo run ui-add",
+    "build:mobile-dev": "pnpm -F @playground/expo build:dev",
+    "build:mobile-prev": "pnpm -F @playground/expo build:prev",
+    "build:mobile-prod": "pnpm -F @playground/expo build:prod"
   },
   "devDependencies": {
     "@playground/prettier-config": "workspace:*",
