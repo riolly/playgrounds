@@ -6,6 +6,7 @@ import type {
 import { skipCSRFCheck } from "@auth/core";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Discord from "next-auth/providers/discord";
+
 import { db } from "@playground/db/client";
 import { Account, Session, User } from "@playground/db/schema";
 

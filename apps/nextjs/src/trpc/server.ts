@@ -1,7 +1,8 @@
-import type { AppRouter } from "@playground/api";
 import { cache } from "react";
 import { headers } from "next/headers";
 import { createHydrationHelpers } from "@trpc/react-query/rsc";
+
+import type { AppRouter } from "@playground/api";
 import { createCaller, createTRPCContext } from "@playground/api";
 import { auth } from "@playground/auth";
 

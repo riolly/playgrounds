@@ -1,7 +1,8 @@
 import type { TRPCRouterRecord } from "@trpc/server";
+import { z } from "zod";
+
 import { desc, eq } from "@playground/db";
 import { CreatePostSchema, Post } from "@playground/db/schema";
-import { z } from "zod";
 
 import { protectedProcedure, publicProcedure } from "../trpc";
 
