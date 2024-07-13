@@ -20,7 +20,7 @@ Through these experiences, we learned the importance of managing **money**, **ti
 
 ## Our Hope for You
 
-We hope that this app will be helpful not only for us but also for you. By ourseleves, we are not strong enough, but together your BelovedOne, nothing is impossible.
+We hope that this app will be helpful not only for us but also for you. By ourselves, we are not strong enough, but together with your BelovedOne, nothing is impossible.
 
 **Berto & Nike**
 
