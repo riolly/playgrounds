@@ -1,8 +1,8 @@
 {
-  "name": "@acme/expo",
+  "name": "@playground/expo",
   "version": "0.1.0",
   "private": true,
-  "main": "expo-router/entry",
+  "main": "index.js",
   "scripts": {
     "clean": "git clean -xdf .expo .turbo node_modules",
     "dev": "expo start",
@@ -12,7 +12,10 @@
     "ios": "expo run:ios",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:dev": "APP_VARIANT=development eas build --profile=development --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(dev)\".apk",
+    "build:prev": "APP_VARIANT=preview eas build --profile=preview --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(prev)\".apk",
+    "build:prod": "APP_VARIANT=production eas build --profile=production --platform=android --local --output=\".apk/beloved_one-v$npm_package_version\".apk"
   },
   "dependencies": {
     "@bacons/text-decoder": "^0.0.0",
@@ -22,14 +25,15 @@
     "@trpc/client": "11.0.0-rc.441",
     "@trpc/react-query": "11.0.0-rc.441",
     "@trpc/server": "11.0.0-rc.441",
-    "expo": "~51.0.18",
+    "expo": "~51.0.20",
     "expo-constants": "~16.0.2",
-    "expo-dev-client": "~4.0.19",
+    "expo-dev-client": "~4.0.20",
     "expo-linking": "~6.3.1",
-    "expo-router": "~3.5.17",
+    "expo-router": "~3.5.18",
     "expo-secure-store": "^13.0.2",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
+    "expo-system-ui": "^3.0.7",
     "expo-web-browser": "^13.0.3",
     "nativewind": "~4.0.36",
     "react": "catalog:react18",
@@ -43,14 +47,14 @@
     "superjson": "2.2.1"
   },
   "devDependencies": {
-    "@acme/api": "workspace:*",
-    "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@acme/tailwind-config": "workspace:*",
-    "@acme/tsconfig": "workspace:*",
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
     "@babel/runtime": "^7.24.7",
+    "@playground/api": "workspace:*",
+    "@playground/eslint-config": "workspace:*",
+    "@playground/prettier-config": "workspace:*",
+    "@playground/tailwind-config": "workspace:*",
+    "@playground/tsconfig": "workspace:*",
     "@types/babel__core": "^7.20.5",
     "@types/react": "catalog:react18",
     "eslint": "catalog:",
@@ -58,5 +62,5 @@
     "tailwindcss": "^3.4.4",
     "typescript": "catalog:"
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@playground/prettier-config"
 }
