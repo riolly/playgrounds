@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+
 import { cn } from "@playground/ui";
 import { ThemeProvider, ThemeToggle } from "@playground/ui/theme";
 import { Toaster } from "@playground/ui/toast";
@@ -11,24 +12,23 @@ import "~/app/globals.css";
 
 import { env } from "~/env";
 
+const appName = "BelovedOne";
+const title = "BelovedOne - Achieve the impossible with your love";
+const description =
+  "Together manage your time, money, and tasks by keeping each other accountable & excited";
+const url = "https://yourbeloved.one";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
-    env.VERCEL_ENV === "production"
-      ? "https://turbo.t3.gg"
-      : "http://localhost:3000",
+    env.VERCEL_ENV === "production" ? url : "http://localhost:3000",
   ),
-  title: "Create T3 Turbo",
-  description: "Simple monorepo with shared backend for web & mobile apps",
-  openGraph: {
-    title: "Create T3 Turbo",
-    description: "Simple monorepo with shared backend for web & mobile apps",
-    url: "https://create-t3-turbo.vercel.app",
-    siteName: "Create T3 Turbo",
-  },
+  title,
+  description,
+  openGraph: { title, description, url, siteName: appName },
   twitter: {
     card: "summary_large_image",
-    site: "@jullerino",
-    creator: "@jullerino",
+    site: "@yourbeloved_one",
+    creator: "@yourbeloved_one",
   },
 };
 
