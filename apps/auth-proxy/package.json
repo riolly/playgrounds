@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "nitro dev",
     "build": "nitro build",
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint",
