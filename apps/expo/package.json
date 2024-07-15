@@ -13,9 +13,9 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "build:dev": "NODE_ENV=development eas build --profile=development --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(dev)\".apk",
-    "build:prev": "NODE_ENV=preview eas build --profile=preview --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(prev)\".apk",
-    "build:prod": "NODE_ENV=production eas build --profile=production --platform=android --local --output=\".apk/beloved_one-v$npm_package_version\".apk"
+    "build:dev": "BUILD_TARGET=development eas build --profile=development --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(dev)\".apk",
+    "build:prev": "BUILD_TARGET=preview eas build --profile=preview --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(prev)\".apk",
+    "build:prod": "BUILD_TARGET=production eas build --profile=production --platform=android --local --output=\".apk/beloved_one-v$npm_package_version\".apk"
   },
   "dependencies": {
     "@bacons/text-decoder": "^0.0.0",
