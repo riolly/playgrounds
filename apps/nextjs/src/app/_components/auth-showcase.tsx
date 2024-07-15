@@ -6,7 +6,7 @@ export async function AuthShowcase() {
 
   if (!session) {
     return (
-      <form>
+      <form className="flex flex-col gap-4">
         <Button
           size="lg"
           formAction={async () => {
@@ -15,6 +15,15 @@ export async function AuthShowcase() {
           }}
         >
           Sign in with Discord
+        </Button>
+        <Button
+          size="lg"
+          formAction={async () => {
+            "use server";
+            await signIn("google");
+          }}
+        >
+          Sign in with Google
         </Button>
       </form>
     );

@@ -6,6 +6,7 @@ import type {
 import { skipCSRFCheck } from "@auth/core";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import Discord from "next-auth/providers/discord";
+import Google from "@auth/core/providers/google";
 
 import { db } from "@playground/db/client";
 import { Account, Session, User } from "@playground/db/schema";
@@ -38,7 +39,7 @@ export const authConfig = {
       }
     : {}),
   secret: env.AUTH_SECRET,
-  providers: [Discord],
+  providers: [Discord, Google],
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))
