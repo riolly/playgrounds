@@ -13,8 +13,9 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "get-branch-name": "git rev-parse --abbrev-ref HEAD",
     "build:dev": "BUILD_TARGET=development eas build --profile=development --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(dev)\".apk",
-    "build:prev": "BUILD_TARGET=preview eas build --profile=preview --platform=android --local --output=\".apk/beloved_one-v$npm_package_version(prev)\".apk",
+    "build:prev": "sh -c 'BRANCH_NAME=$(npm run get-branch-name --silent) && BUILD_TARGET=preview BRANCH_NAME=$BRANCH_NAME eas build --profile=preview --platform=android --local --output=\".apk/beloved_one-v$npm_package_version($BRANCH_NAME).apk\"'",
     "build:prod": "BUILD_TARGET=production eas build --profile=production --platform=android --local --output=\".apk/beloved_one-v$npm_package_version\".apk"
   },
   "dependencies": {
