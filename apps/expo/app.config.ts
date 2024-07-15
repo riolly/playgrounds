@@ -26,7 +26,7 @@ const vars = {
 
 function getEnv(variable: keyof typeof vars) {
   const variant =
-    (process.env.APP_VARIANT as "development" | "preview" | "production") ??
+    (process.env.NODE_ENV as "development" | "preview" | "production") ??
     "development";
   return vars[variable][variant];
 }
