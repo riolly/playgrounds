@@ -4,9 +4,9 @@ import { drizzle } from "drizzle-orm/neon-http";
 import * as schema from "./schema";
 
 // eslint-disable-next-line no-restricted-properties
-const postgresUrl = process.env.POSTGRES_URL;
+const postgresUrl = process.env.DATABASE_URL;
 if (!postgresUrl) {
-  throw new Error("POSTGRES_URL is not defined");
+  throw new Error("DATABASE_URL is not defined");
 }
 
 const sql = neon(postgresUrl);
