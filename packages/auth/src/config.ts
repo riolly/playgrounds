@@ -39,7 +39,16 @@ export const authConfig = {
       }
     : {}),
   secret: env.AUTH_SECRET,
-  providers: [Discord, Google],
+  providers: [
+    Discord({
+      clientId: env.AUTH_DISCORD_ID,
+      clientSecret: env.AUTH_DISCORD_SECRET,
+    }),
+    Google({
+      clientId: env.AUTH_GOOGLE_ID,
+      clientSecret: env.AUTH_GOOGLE_SECRET,
+    }),
+  ],
   callbacks: {
     session: (opts) => {
       if (!("user" in opts))

@@ -6,27 +6,32 @@ const project = {
   id: "87543a2c-05d6-484d-ad72-be4af9b8aad8",
 };
 
+export const getBranchName = (separator: string): string =>
+  process.env.BRANCH_NAME?.replace(/[^\w\s]/g, separator) // Replace non-alphanumeric
+    .replace(/\s+/g, separator) // Replace whitespace
+    .toLowerCase() || "";
+
 const vars = {
   name: {
     development: "BelovedOne (Dev)",
-    preview: "BelovedOne (Prev)",
+    preview: `BelovedOne (${getBranchName(" ")})`,
     production: "BelovedOne",
   },
   identifier: {
     development: "com.belovedone.dev",
-    preview: "com.belovedone.prev",
+    preview: `com.belovedone.prev.${getBranchName("_")}`,
     production: "com.belovedone",
   },
   apiUrl: {
     development: "http://localhost:3000",
-    preview: "https://preview.yourbeloved.one",
-    production: "https://yourbeloved.one",
+    preview: `https://beloved-one-git-${getBranchName("-")}-riolly-projects.vercel.app`,
+    production: "https://www.yourbeloved.one",
   },
 };
 
 function getEnv(variable: keyof typeof vars) {
   const variant =
-    (process.env.NODE_ENV as "development" | "preview" | "production") ??
+    (process.env.BUILD_TARGET as "development" | "preview" | "production") ??
     "development";
   return vars[variable][variant];
 }
