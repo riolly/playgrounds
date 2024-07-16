@@ -25,7 +25,7 @@ const vars = {
   apiUrl: {
     development: "http://localhost:3000",
     preview: `https://beloved-one-git-${getBranchName("-")}-riolly-projects.vercel.app`,
-    production: "https://yourbeloved.one",
+    production: "https://www.yourbeloved.one",
   },
 };
 
